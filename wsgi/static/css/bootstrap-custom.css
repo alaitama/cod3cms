@@ -1,0 +1,13 @@
+
+
+footer {
+    background-color: #727272;
+    border-top: 1px solid #E7201A;
+    margin-top: 15px;
+    padding: 15px 0px 30px;
+}
+
+
+.tree.active > a {
+  background-color: #353A41;
+}

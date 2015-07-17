@@ -3,13 +3,12 @@
 from setuptools import setup
 
 setup(
-    name='mezzanine-openshift',
-    version='1.2',
-    description='Mezzanine configured for deployment on OpenShift.',
-    author='Isaac Bythewood',
-    contributors='Alberto Laita',
-    author_email='isaac@bythewood.me',
-    url='http://isaacbythewood.com/',
+    name='cod3-mezzanine-openshift',
+    version='1.0',
+    description='COD3 web. Mezzanine configured for deployment on OpenShift.',
+    author='Alberto Laita',
+    author_email='alblaita@gmail.com',
+    url='http://ramsys.es/',
     install_requires=[
         'Django==1.6.11',
         'mezzanine==3.1.10',
