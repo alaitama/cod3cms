@@ -4,7 +4,7 @@ from settings import *
 DEBUG = True
 ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 
-SITE_ID=1
+# SITE_ID=1
 
 # a setting to determine whether we are running on OpenShift
 ON_OPENSHIFT = False
