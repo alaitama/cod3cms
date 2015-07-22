@@ -248,8 +248,8 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    #"mezzanine.accounts",
-    #"mezzanine.mobile",
+    # "mezzanine.accounts",
+    # "mezzanine.mobile",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -348,8 +348,6 @@ except ImportError as e:
     if "local_settings" not in str(e):
         raise e
 
-
-
 ####################
 # DYNAMIC SETTINGS #
 ####################
@@ -380,12 +378,12 @@ DATABASES = {
 }
 """
 
-#SECRET_KEY = 'your-super-secret-key'
+# SECRET_KEY = 'your-super-secret-key'
 
 
 MEDIA_URL = '/static/media/'
 MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR'), 'media')
 
 
-#from mezzanine.utils.conf import set_dynamic_settings
-#set_dynamic_settings(globals())
+# from mezzanine.utils.conf import set_dynamic_settings
+# set_dynamic_settings(globals())
