@@ -10,5 +10,5 @@ class StaticStorage(S3BotoStorage):
 class MediaStorage(S3BotoStorage):
     location = settings.MEDIAFILES_LOCATION
 
-    def isdir(path):
-        return os.path.isdir(path)
+    def isdir(self, str_path):
+        return os.path.isdir(str_path)
