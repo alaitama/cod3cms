@@ -1,6 +1,5 @@
 from settings import *
 
-
 DEBUG = True
 INTERNAL_IPS = ("127.0.0.1",)
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
@@ -17,10 +16,6 @@ DATABASES = {
 SECRET_KEY = 'development-key'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../../data/media/')
-
-
-from mezzanine.utils.conf import set_dynamic_settings
-set_dynamic_settings(globals())
-
+#MEDIA_URL = '/static/media/'
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../../data/media/')
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')

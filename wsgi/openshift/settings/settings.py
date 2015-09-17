@@ -110,7 +110,7 @@ USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "es"
+LANGUAGE_CODE = "en"
 
 # Supported languages
 _ = lambda s: s
@@ -188,6 +188,7 @@ import os
 
 # Full filesystem path to the project.
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_ROOT,".."))
 
 # Name of the directory for the project.
 PROJECT_DIRNAME = PROJECT_ROOT.split(os.sep)[-1]
@@ -205,8 +206,7 @@ STATIC_URL = "/static/"
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -249,9 +249,9 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    # "mezzanine.accounts",
-    # "mezzanine.mobile",
-    "storages",
+    #"mezzanine.accounts",
+    #"mezzanine.mobile",
+    "cod3",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -311,8 +311,6 @@ OPTIONAL_APPS = (
     PACKAGE_NAME_GRAPPELLI,
 )
 
-DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
-
 ###################
 # DEPLOY SETTINGS #
 ###################
@@ -350,6 +348,7 @@ except ImportError as e:
     if "local_settings" not in str(e):
         raise e
 
+
 ####################
 # DYNAMIC SETTINGS #
 ####################
@@ -366,26 +365,3 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
-
-
-######################
-# OPENSHIFT CONFIG #
-####################
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'sqlite3.db'),
-    }
-}
-"""
-
-# SECRET_KEY = 'your-super-secret-key'
-
-
-MEDIA_URL = '/static/media/'
-MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR'), 'media')
-
-
-# from mezzanine.utils.conf import set_dynamic_settings
-# set_dynamic_settings(globals())
